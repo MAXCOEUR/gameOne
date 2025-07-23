@@ -1,27 +1,13 @@
 VERSION 5.00
 Begin VB.Form Form1 
-   Caption         =   "Form1"
-   ClientHeight    =   1530
+   ClientHeight    =   1545
    ClientLeft      =   60
    ClientTop       =   405
-   ClientWidth     =   8730
+   ClientWidth     =   8700
    LinkTopic       =   "Form1"
-   ScaleHeight     =   1530
-   ScaleWidth      =   8730
+   ScaleHeight     =   1545
+   ScaleWidth      =   8700
    StartUpPosition =   3  'Windows Default
-   Begin VB.PictureBox Picture1 
-      Appearance      =   0  'Flat
-      BackColor       =   &H80000004&
-      BorderStyle     =   0  'None
-      ForeColor       =   &H80000008&
-      Height          =   615
-      Left            =   5760
-      ScaleHeight     =   615
-      ScaleWidth      =   2775
-      TabIndex        =   5
-      Top             =   720
-      Width           =   2775
-   End
    Begin VB.CommandButton cmdBegin 
       Caption         =   "Recommancé"
       Height          =   495
@@ -55,6 +41,14 @@ Begin VB.Form Form1
       ToolTipText     =   "entrer votre Valeur"
       Top             =   240
       Width           =   5295
+   End
+   Begin VB.Image Image1 
+      Height          =   735
+      Left            =   6600
+      Picture         =   "Form1.frx":0000
+      Stretch         =   -1  'True
+      Top             =   720
+      Width           =   1125
    End
    Begin VB.Label lblAttempts 
       Caption         =   "Label1"
@@ -94,6 +88,7 @@ Private Sub ResetGame()
     InitSecretNumber
     attempts = 0
     lblMessage.Caption = "Devine un nombre entre 1 et " & MaxNumber
+    Form1.Caption = "Devine un nombre entre 1 et " & MaxNumber
     lblAttempts.Caption = "Tentatives : 0"
     txtGuess.Text = ""
     cmdTry.Enabled = True
@@ -133,30 +128,8 @@ Private Sub cmdTry_Click()
     Call CheckGuess
 End Sub
 
-Private Sub Load_Picture()
-    Dim img As StdPicture
-    Set img = LoadPicture("C:\GitKraken\testvb6\gameOne\pp.jpg")
-
-    Dim ratioW As Double, ratioH As Double, ratioFinal As Double
-    ratioW = Picture1.ScaleWidth / img.Width
-    ratioH = Picture1.ScaleHeight / img.Height
-    ratioFinal = IIf(ratioW < ratioH, ratioW, ratioH)
-
-    Dim newW As Long, newH As Long
-    newW = img.Width * ratioFinal
-    newH = img.Height * ratioFinal
-
-    Picture1.AutoRedraw = True
-    Picture1.Cls
-    Picture1.PaintPicture img, _
-        (Picture1.ScaleWidth - newW) / 2, _
-        (Picture1.ScaleHeight - newH) / 2, _
-        newW, newH
-End Sub
-
 Private Sub Form_Load()
     Call ResetGame
-    Call Load_Picture
         
 End Sub
 
