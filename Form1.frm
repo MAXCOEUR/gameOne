@@ -133,8 +133,7 @@ Private Sub cmdTry_Click()
     Call CheckGuess
 End Sub
 
-Private Sub Form_Load()
-    Call ResetGame
+Private Sub Load_Picture()
     Dim img As StdPicture
     Set img = LoadPicture("C:\GitKraken\testvb6\gameOne\pp.jpg")
 
@@ -153,6 +152,11 @@ Private Sub Form_Load()
         (Picture1.ScaleWidth - newW) / 2, _
         (Picture1.ScaleHeight - newH) / 2, _
         newW, newH
+End Sub
+
+Private Sub Form_Load()
+    Call ResetGame
+    Call Load_Picture
         
 End Sub
 
