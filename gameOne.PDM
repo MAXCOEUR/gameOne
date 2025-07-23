@@ -1,0 +1,91 @@
+[Root]
+Most Recent Package=Standard Setup Package 1
+
+
+[Package|Standard Setup Package 1|Root]
+SubWizProgID=PDWizard.SetupPkgSubWiz
+BuildFolder=\\SRV-DECLIC-AD\DonneesD\Travail\u\nfs\vb6\gameOne\Package
+
+[Package|Standard Setup Package 1|Configure DAO ISAMs]
+Applicable=No
+
+[Package|Standard Setup Package 1|Configure DAO ODBC]
+JetWorkspace=
+ODBCDirect=
+
+[Package|Standard Setup Package 1|Files Found]
+
+[Package|Standard Setup Package 1|Files Released]
+
+[Package|Standard Setup Package 1|Missing Dependency Information]
+
+[Package|Standard Setup Package 1|Out-of-Date Dependency Information]
+C:\Windows\SysWOW64\msstdfmt.dll=
+
+[Package|Standard Setup Package 1|Files Added]
+
+[Package|Standard Setup Package 1|Files Removed]
+
+[Package|Standard Setup Package 1|Files In Project]
+\\SRV-DECLIC-AD\DonneesD\Travail\u\nfs\vb6\gameOne\gameOne.exe=Yes
+C:\Windows\System32\msvbvm60.dll=Yes
+C:\Program Files (x86)\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\OLEAUT32.DLL=Yes
+C:\Program Files (x86)\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\OLEPRO32.DLL=Yes
+C:\Program Files (x86)\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\ASYCFILT.DLL=Yes
+C:\Program Files (x86)\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\STDOLE2.TLB=Yes
+C:\Program Files (x86)\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\COMCAT.DLL=Yes
+C:\Windows\SysWOW64\msstdfmt.dll=Yes
+C:\Program Files (x86)\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP.EXE=Yes
+C:\Program Files (x86)\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP1.EXE=Yes
+C:\Windows\System32\VB6STKIT.DLL=Yes
+C:\Program Files (x86)\Microsoft Visual Studio\VB98\Wizards\PDWizard\ST6UNST.EXE=Yes
+
+[Package|Standard Setup Package 1|Configure Registry Files]
+Applicable=No
+
+[Package|Standard Setup Package 1|Configure Remote Servers]
+Applicable=No
+
+[Package|Standard Setup Package 1|Install Locations]
+C:\Windows\System32\msvbvm60.dll=$(WinSysPathSysFile)
+C:\Program Files (x86)\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\OLEAUT32.DLL=$(WinSysPathSysFile)
+C:\Program Files (x86)\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\OLEPRO32.DLL=$(WinSysPathSysFile)
+C:\Program Files (x86)\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\ASYCFILT.DLL=$(WinSysPathSysFile)
+C:\Program Files (x86)\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\STDOLE2.TLB=$(WinSysPathSysFile)
+C:\Program Files (x86)\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\COMCAT.DLL=$(WinSysPathSysFile)
+C:\Windows\SysWOW64\msstdfmt.dll=$(WinSysPath)
+C:\Program Files (x86)\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP.EXE=$(AppPath)
+C:\Program Files (x86)\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP1.EXE=$(WinPath)
+C:\Windows\System32\VB6STKIT.DLL=$(WinSysPathSysFile)
+C:\Program Files (x86)\Microsoft Visual Studio\VB98\Wizards\PDWizard\ST6UNST.EXE=$(WinPath)
+\\SRV-DECLIC-AD\DonneesD\Travail\u\nfs\vb6\gameOne\gameOne.exe=$(AppPath)
+
+[Package|Standard Setup Package 1|Configure Shared Files]
+Applicable=Yes
+\\SRV-DECLIC-AD\DonneesD\Travail\u\nfs\vb6\gameOne\gameOne.exe=No
+
+[Package|Standard Setup Package 1|Distribution]
+Type=single
+Size=
+Title=gameOne
+
+[Package|Standard Setup Package 1|Package]
+PackageFolder=\\SRV-DECLIC-AD\DonneesD\Travail\u\nfs\vb6\gameOne\Package
+ProjectFolder=\\SRV-DECLIC-AD\DonneesD\Travail\u\nfs\vb6\gameOne
+ServerSideCab=
+File1=\\SRV-DECLIC-AD\DonneesD\Travail\u\nfs\vb6\gameOne\Package\setup.exe
+File2=\\SRV-DECLIC-AD\DonneesD\Travail\u\nfs\vb6\gameOne\Package\Setup.Lst
+File3=\\SRV-DECLIC-AD\DonneesD\Travail\u\nfs\vb6\gameOne\Package\gameOne.CAB
+Handler1=PDWizard.FolderDplySubWiz
+Handler2=PDWizard.WebPostDplySubWiz
+
+[Package|Standard Setup Package 1|IconGroups]
+Group0=gameOne
+PrivateGroup0=-1
+Parent0=$(Programs)
+
+[Package|Standard Setup Package 1|gameOne]
+Icon1=gameOne.exe
+Title1=gameOne
+StartIn1=$(AppPath)
+Key1=Icon1

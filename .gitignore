@@ -1,0 +1,43 @@
+# Visual Basic 6 Git Ignore
+
+# Fichiers de compilation
+*.exe
+*.dll
+*.ocx
+*.tlb
+*.vbx
+
+# Fichiers temporaires
+*.log
+*.tmp
+*.obj
+
+# Fichiers de sauvegarde
+*.bak
+*.old
+
+# Fichiers de ressources générés
+*.res
+
+# Dossiers de build
+[Bb]in/
+[Oo]bj/
+[Dd]ebug/
+[Rr]elease/
+Package/
+
+# Fichiers système
+Thumbs.db
+Desktop.ini
+
+# Fichiers du système de contrôle de sources
+*.vsscc
+*.scc
+
+# Autres fichiers générés
+*.pch
+*.idb
+*.ilk
+*.ncb
+*.suo
+*.user
