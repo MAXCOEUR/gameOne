@@ -1,28 +1,41 @@
 VERSION 5.00
 Begin VB.Form Form1 
    Caption         =   "Form1"
-   ClientHeight    =   2355
+   ClientHeight    =   1530
    ClientLeft      =   60
    ClientTop       =   405
-   ClientWidth     =   8670
+   ClientWidth     =   8730
    LinkTopic       =   "Form1"
-   ScaleHeight     =   2355
-   ScaleWidth      =   8670
+   ScaleHeight     =   1530
+   ScaleWidth      =   8730
    StartUpPosition =   3  'Windows Default
+   Begin VB.PictureBox Picture1 
+      Appearance      =   0  'Flat
+      BackColor       =   &H80000004&
+      BorderStyle     =   0  'None
+      ForeColor       =   &H80000008&
+      Height          =   615
+      Left            =   5760
+      ScaleHeight     =   615
+      ScaleWidth      =   2775
+      TabIndex        =   5
+      Top             =   720
+      Width           =   2775
+   End
    Begin VB.CommandButton cmdBegin 
       Caption         =   "Recommancé"
-      Height          =   735
-      Left            =   5520
+      Height          =   495
+      Left            =   5640
       TabIndex        =   4
-      Top             =   1560
+      Top             =   120
       Width           =   1455
    End
    Begin VB.CommandButton cmdTry 
       Caption         =   "Valider"
-      Height          =   735
-      Left            =   6960
+      Height          =   495
+      Left            =   7080
       TabIndex        =   1
-      Top             =   1560
+      Top             =   120
       Width           =   1575
    End
    Begin VB.TextBox txtGuess 
@@ -36,27 +49,27 @@ Begin VB.Form Form1
          LCID            =   1036
          SubFormatType   =   1
       EndProperty
-      Height          =   1215
+      Height          =   285
       Left            =   240
       TabIndex        =   0
       ToolTipText     =   "entrer votre Valeur"
       Top             =   240
-      Width           =   8295
+      Width           =   5295
    End
    Begin VB.Label lblAttempts 
       Caption         =   "Label1"
       Height          =   255
-      Left            =   240
+      Left            =   360
       TabIndex        =   3
-      Top             =   1920
+      Top             =   1080
       Width           =   5175
    End
    Begin VB.Label lblMessage 
       Caption         =   "Label1"
       Height          =   255
-      Left            =   240
+      Left            =   360
       TabIndex        =   2
-      Top             =   1560
+      Top             =   720
       Width           =   5175
    End
 End
@@ -122,7 +135,27 @@ End Sub
 
 Private Sub Form_Load()
     Call ResetGame
+    Dim img As StdPicture
+    Set img = LoadPicture("C:\GitKraken\testvb6\gameOne\pp.jpg")
+
+    Dim ratioW As Double, ratioH As Double, ratioFinal As Double
+    ratioW = Picture1.ScaleWidth / img.Width
+    ratioH = Picture1.ScaleHeight / img.Height
+    ratioFinal = IIf(ratioW < ratioH, ratioW, ratioH)
+
+    Dim newW As Long, newH As Long
+    newW = img.Width * ratioFinal
+    newH = img.Height * ratioFinal
+
+    Picture1.AutoRedraw = True
+    Picture1.Cls
+    Picture1.PaintPicture img, _
+        (Picture1.ScaleWidth - newW) / 2, _
+        (Picture1.ScaleHeight - newH) / 2, _
+        newW, newH
+        
 End Sub
+
 
 Private Sub txtGuess_Change()
     If txtGuess.Text <> "" Then
